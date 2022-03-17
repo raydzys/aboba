@@ -1,0 +1,28 @@
+CREATE TABLE users
+(id int(10) PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(100),
+last_name VARCHAR(100),
+otche VARCHAR(100),
+birth_date DATETIME);
+
+CREATE TABLE category 
+(id INT(10) PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100),
+parent_category INT(10));
+
+CREATE TABLE tag
+(id INT(10) PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100),
+color VARCHAR(100));
+
+CREATE TABLE project
+(id INT(10) PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100));
+
+CREATE TABLE zadach
+(id int(10) PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100),
+date_start DATETIME,
+date_end DATETIME,
+project INT(100),
+category INT(100));
