@@ -7,3 +7,15 @@ select * from users
 alter table users
 alter column otche set DEFAULT "tomsk";
 select * from users;
+
+insert into users (name, last_name) values ('bebra', 'ada');
+select * from users;
+
+
+
+
+insert into users (name, last_name, otche, birth_date, city, phone) values ('agash', 'adash', 'valeras', '12.12.2000', 'NU', '35-32-31-41');
+select * from users;
+
+
+https://sqliteonline.com/
