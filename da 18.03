@@ -19,3 +19,16 @@ select * from users;
 
 
 https://sqliteonline.com/
+
+
+create table gender (
+  id INt primary key AUTO_INCREMENT,
+  rus varchar(10) not NULL,
+  eng varchar(10) not NULL
+  )
+  
+  insert into gender (rus, eng) values 
+ ('Мужской', 'Male'),
+('Женский', 'Female') 
+
+  
