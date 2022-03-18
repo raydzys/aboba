@@ -1,0 +1,9 @@
+alter table users drop column new_post;
+
+
+select * from users
+
+
+alter table users
+alter column otche set DEFAULT "tomsk";
+select * from users;
