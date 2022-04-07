@@ -1,39 +1,24 @@
-ALTER TABLE users ADD email VARCHAR(99) UNIQUE;
-ALTER TABLE users ADD gender VARCHAR(99) UNIQUE;
-ALTER TABLE users ADD company VARCHAR(99) UNIQUE;
-ALTER TABLE users ADD post VARCHAR(99) UNIQUE;
-ALTER TABLE users ADD address VARCHAR(99) UNIQUE;
-ALTER TABLE users ADD city VARCHAR(99) UNIQUE;
-ALTER TABLE users ADD phone VARCHAR(99) UNIQUE;
+ALTER TABLE users MODIFY COLUMN gender INT(22);
+ALTER TABLE users MODIFY COLUMN company INT(22);
 
+ALTER TABLE users
+ADD CONSTRAINT genderC
+FOREIGN KEY (gender)
+REFERENCES genderC(id);
 
+ALTER TABLE users
+ADD CONSTRAINT companyC
+FOREIGN KEY (company)
+REFERENCES companyC(id);
 
-INSERT INTO `users` (`name`, `last_name`, `otche`, `birth_date`, `email`) VALUES 
-('Abobus', 'Dada', 'Valeryc', '2000-12-12', 'Ktokavo@gmail.com'),
-('Avtobus', 'NetNet', 'Valesaryc', '1980-02-12', 'Nikabo@gmail.com'),
-('Chelovek', 'oleg', 'Filoak', '1999-12-12', 'nenada@gmail.com'),
-('Petr', 'Dada', 'Chichnyak', '2000-12-27', 'NEoch@gmail.com'),
-('Adolf', 'Dada', 'Adolfic', '1960-05-21', 'ONO@maircf.ru'),
-('Nekoglay', 'Valechikd', 'Valeryc', '2000-12-23', 'Ktokavo@gmail.com'),
-('Torgash', 'Zavist', 'Obem', '1998-01-02', 'Gild@gmail.com'),
-('Pokup', 'Cherza', 'Ovaz', '1998-01-24', 'ovasger@gmail.com'),
-('Artem', 'Zavist', 'Cherzarovich', '1998-01-02', 'Dumas@gmail.com'),
-('Mazeloff', 'Kirieshka', 'Mem', '2001-01-15', 'kirie@gmail.com');
+UPDATE users SET gender = 1;
+UPDATE users SET gender = 2 WHERE id in(2,5);
 
+INSERT INTO company (name, INN, MNUM, director, adress) VALUES 
+('Ubisoft', '228777666555', '1648664442624', 'Adolf G. Michaelid', '67474 Some Ulica 965 North Killa, 424 Ulica'), 
+('TerraGroup', '483852959322', '3333333333333', 'Buyanov N. M.', '412342 Tarkov City, Lab'), 
+('141Force', '720929705956', '8587201416343', 'V. Makarov', 'Airport SPT, Kiyv 3242414');
 
-
-ALTER TABLE users ADD CONSTRAINT UNIQUE(name, last_name, otche, birth_date);
-
-
-
-ALTER TABLE users  ADD region VARCHAR(100) NOT NULL DEFAULT 'Tomsk';
-
-create table gender (
-  id INt primary key AUTO_INCREMENT,
-  rus varchar(10) not NULL,
-  eng varchar(10) not NULL
-  )
-  
- /* insert into gender (rus, eng) values 
- ('Мужской', 'Male'),
-('Женский', 'Female') */ 
+UPDATE users SET company = 1 WHERE id in(3, 1, 2);
+UPDATE users SET company = 2 WHERE id in(5, 6, 7);
+UPDATE users SET company = 3 WHERE id in(9, 10, 4);
