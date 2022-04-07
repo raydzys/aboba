@@ -31,3 +31,9 @@ SELECT AVG(age) AS average_age, MAX(age) AS stari, MIN(age) AS jung
 FROM users WHERE city = 4;
 SELECT AVG(age) AS average_age, MAX(age) AS stari, MIN(age) AS jung  
 FROM users WHERE city = 5;
+
+///or
+
+SELECT city, MAX(age) AS 'max wosrast' FROM users GROUP BY city;
+SELECT city, MIN(age) AS 'min wosrast' FROM users GROUP BY city;
+SELECT city, AVG(age) AS 'average wosrast' FROM users GROUP BY city;
