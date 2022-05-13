@@ -1,1 +1,2 @@
-SELECT titles.title, AVG(salaries.salary) FROM titles INNER JOIN salaries ON titles.emp_no = salaries.emp_no GROUP BY titles.title;
+SELECT NameZ.nme, AVG(Sotr.sotrb) 
+FROM NameZ INNER JOIN salaries ON Namez.sotr_nm = salaries.sotr_nm GROUP BY NameZ.nme;
